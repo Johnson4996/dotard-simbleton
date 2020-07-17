@@ -1,13 +1,27 @@
-import { useBusiness } from "./BusinessProvider.js"
+import { useBusiness, onlyNy } from "./BusinessProvider.js"
 import { businessHTML } from "./Business.js"
 
-const contentElement = document.querySelector(".container")
+const allBus = document.querySelector(".businessList")
+const nyBus = document.querySelector(".businessList--newYork")
 
+
+
+//lists all businesses 
 export const businessList =() =>{
     const businessArr = useBusiness()
-    contentElement.innerHTML = "<h1> Active Businesses </h1>"
+    allBus.innerHTML = "<h1> Active Businesses </h1>"
 
     businessArr.forEach(business => {
-        contentElement.innerHTML += businessHTML(business)
+        allBus.innerHTML += businessHTML(business)
+    });
+}
+
+//lists only businesses from NY
+export const businessNy =() =>{
+    const nyBusinesses = onlyNy()
+    nyBus.innerHTML = "<h1> New York businesses </h1>"
+
+    nyBusinesses.forEach(business => {
+        nyBus.innerHTML += businessHTML(business)
     });
 }
