@@ -111,6 +111,6 @@ const businesses = [
     }
   ];
 
-  export const useSupplies = () => {
+  export const useBusiness = () => {
     return businesses.slice() 
 }

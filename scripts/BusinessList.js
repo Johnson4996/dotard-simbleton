@@ -3,11 +3,11 @@ import { businessHTML } from "./Business.js"
 
 const contentElement = document.querySelector(".container")
 
-const businessList =() =>{
+export const businessList =() =>{
     const businessArr = useBusiness()
-    contentElement.innerHTML = "<h1> Business List </h1>"
+    contentElement.innerHTML = "<h1> Active Businesses </h1>"
 
-    businessList.forEach(business => {
+    businessArr.forEach(business => {
         contentElement.innerHTML += businessHTML(business)
     });
 }
