@@ -1,8 +1,9 @@
-import { useBusiness, onlyNy } from "./BusinessProvider.js"
+import { useBusiness, onlyNy, onlyManuf } from "./BusinessProvider.js"
 import { businessHTML } from "./Business.js"
 
 const allBus = document.querySelector(".businessList")
 const nyBus = document.querySelector(".businessList--newYork")
+const manufBus = document.querySelector(".businessList--manufacturing")
 
 
 
@@ -24,4 +25,13 @@ export const businessNy =() =>{
     nyBusinesses.forEach(business => {
         nyBus.innerHTML += businessHTML(business)
     });
+}
+
+export const businnessManuf = () =>{
+    const busManuf = onlyManuf()
+    manufBus.innerHTML = "<h1> Businesses in Manufacturing </h1>"
+
+    busManuf.forEach(business =>{
+        manufBus.innerHTML += businessHTML(business)
+    })
 }
