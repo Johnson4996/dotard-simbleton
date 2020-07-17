@@ -1,4 +1,5 @@
-import { businessList } from "./BusinessList.js"
+import { businessList, businessNy } from "./BusinessList.js"
 
 
 businessList()
+businessNy()

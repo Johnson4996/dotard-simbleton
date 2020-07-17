@@ -19,7 +19,7 @@ export const businessList =() =>{
 //lists only businesses from NY
 export const businessNy =() =>{
     const nyBusinesses = onlyNy()
-    nyBus.innerHTML = "<h1> New York businesses </h1>"
+    nyBus.innerHTML = "<h1> New York Businesses </h1>"
 
     nyBusinesses.forEach(business => {
         nyBus.innerHTML += businessHTML(business)
