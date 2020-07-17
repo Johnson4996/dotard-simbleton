@@ -54,25 +54,22 @@ document
     .querySelector("#companySearch")
     .addEventListener("keypress", keyPressEvent => {
         if (keyPressEvent.charCode === 13) {
-            const allBusinesses = useBusiness()
-            const foundBusiness = allBusinesses.find(businessObj =>{
-                if(businessObj.companyName.includes(keyPressEvent.target.value)){
-                    return businessObj
+            const allAgents = getAgents
+            const foundAgents = allAgents.find(agentObj =>{
+                if(agentObj.fullName.includes(keyPressEvent.target.value)){
+                    return agentObj
                 }
             })
 
             companySearchResultArticle.innerHTML = `
                 <h2>
-                ${foundBusiness.companyName}
+                ${foundAgents.fullName}
                 </h2>
                 <section>
-                ${foundBusiness.addressFullStreet}
-
+                ${foundAgents.company}
                 </section>
                 <section>
-                ${foundBusiness.addressCity},
-                ${foundBusiness.addressStateCode}
-                ${foundBusiness.addressZipCode}
+                ${foundAgents.phone},
                 </section>
             `;
         }
