@@ -1,3 +1,5 @@
+
+
 const businesses = [
     {
       purchasingAgent: { nameLast: "Kirlin", nameFirst: "Kristy" },
@@ -110,11 +112,13 @@ const businesses = [
       addressCity: "Watrous"
     }
   ];
-
+//get all businesses
   export const useBusiness = () => {
     return businesses.slice() 
 }
 
+
+//get only NY businesses
 export const onlyNy = () => {
   const busObjNy = []
   businesses.filter(busObj => {
@@ -125,6 +129,8 @@ export const onlyNy = () => {
   return busObjNy
 }
 
+
+//get only manufacturing businesses
 export const onlyManuf = () =>{
   const busManuf =[]
   businesses.filter(busObj =>{
@@ -134,4 +140,13 @@ export const onlyManuf = () =>{
   })
   return busManuf
 }
+
+
+export const getAgents = businesses.map(busObj =>{
+  return {
+    "fullName": `${busObj.purchasingAgent.nameFirst} ${busObj.purchasingAgent.nameLast}`,
+    "company":`${busObj.companyName}`,
+    "phone": `${busObj.phoneWork}`
+  }
+})
 

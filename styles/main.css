@@ -4,10 +4,19 @@ h1{
     margin-top: 2rem;
 }
 
-.business--card{
+.business--card, .agent--card{
     border-bottom: 1px solid black;
 }
 
 .bus__addressFull{
     margin-bottom: -1rem;
 }
+
+.agent__phone{
+    margin-bottom: 2rem;
+}
+
+.agent__name{
+font-size: 20;
+}
+
