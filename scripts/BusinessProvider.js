@@ -124,3 +124,14 @@ export const onlyNy = () => {
   })
   return busObjNy
 }
+
+export const onlyManuf = () =>{
+  const busManuf =[]
+  businesses.filter(busObj =>{
+    if(busObj.companyIndustry === "Manufacturing"){
+      busManuf.push(busObj)
+    }
+  })
+  return busManuf
+}
+
